@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+    <div class="about-container">
+        <!-- Заголовок сторінки -->
+        <section class="about-header">
+            <h1>Про нашу туристичну агенцію</h1>
+            <p class="subtitle">Дізнайтеся більше про нашу історію, цінності та людей, які створюють для вас незабутні подорожі.</p>
+        </section>
+
+        <!-- Історія агенції -->
+        <section class="about-section">
+            <div class="about-text">
+                <h2>Історія агенції</h2>
+                <p>
+                    Наша компанія була заснована у 2016 році невеликою командою ентузіастів, які щиро вірили, що подорожі мають бути доступними та безпечними для кожного.
+                    Починаючи з невеликого офісу та кількох напрямків, ми виросли у надійну агенцію, якій довіряють тисячі клієнтів.
+                    Ми постійно розвиваємось, розширюємо карту маршрутів та вдосконалюємо сервіс.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/history.jpg') }}" alt="Історія компанії">
+            </div>
+        </section>
+
+        <!-- Переваги -->
+        <section class="advantages-section">
+            <h2>Чому обирають нас?</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <h3>🌍 Надійні партнери</h3>
+                    <p>Ми співпрацюємо лише з перевіреними готелями, авіакомпаніями та гідами по всьому світу.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>💼 Досвідчена команда</h3>
+                    <p>Наші менеджери особисто відвідали більшість курортів і знають усі нюанси відпочинку.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>📞 Підтримка 24/7</h3>
+                    <p>Ми на зв'язку з нашими клієнтами у будь-якій точці планети вдень і вночі.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Команда -->
+        <section class="team-section">
+            <h2>Наша команда</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/team1.jpg') }}" alt="Олена Коваль">
+                    <h3>Олена Коваль</h3>
+                    <p class="position">Засновниця та директорка</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/team2.jpg') }}" alt="Андрій Мельник">
+                    <h3>Андрій Мельник</h3>
+                    <p class="position">Головний менеджер з туризму</p>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

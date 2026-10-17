@@ -1,0 +1,27 @@
+# Віртуальне середовище
+.venv/
+venv/
+ENV/
+
+# Файли бази даних SQLite
+*.db
+*.sqlite
+*.sqlite3
+database.db
+
+# Кеш та системні файли Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Налаштування середовища (паролі, ключі)
+.env
+.env.*
+
+# Налаштування IDE (PyCharm / IntelliJ)
+.idea/
+.vscode/
+
+# Системні файли ОС
+.DS_Store
+Thumbs.db

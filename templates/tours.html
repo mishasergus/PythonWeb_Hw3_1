@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Список турів - Туристична агенція{% endblock %}
+
+{% block content %}
+    <div class="tours-container">
+        <h1>Наші тури</h1>
+
+        <form method="GET" action="{{ url_for('tours') }}" class="filter-form">
+            <div class="form-group">
+                <label for="name">Назва туру:</label>
+                <input type="text" id="name" name="name" value="{{ search_name }}" placeholder="Введіть назву...">
+            </div>
+
+            <div class="form-group">
+                <label for="min_price">Мін. ціна ($):</label>
+                <input type="number" id="min_price" name="min_price" value="{{ min_price }}" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="max_price">Макс. ціна ($):</label>
+                <input type="number" id="max_price" name="max_price" value="{{ max_price }}" step="0.01">
+            </div>
+
+            <button type="submit" class="btn-filter">Шукати</button>
+        </form>
+
+        <div class="tours-grid">
+            {% for tour in tours %}
+                <div class="tour-card" data-img="{{ tour.image_url }}">
+                    {% if tour.image_url %}
+                        <img src="{{ tour.image_url }}" alt="{{ tour.name }}">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='images/default-tour.jpg') }}" alt="Тур">
+                    {% endif %}
+                    <div class="tour-info">
+                        <h3>{{ tour.name }}</h3>
+                        <p class="destination">📍 Напрямок: {{ tour.destination }}</p>
+                        <p class="description">{{ tour.description }}</p>
+                        <div class="tour-details">
+                            <span class="price">💰 {{ tour.price }} $</span>
+                            <span class="duration">⏱️ {{ tour.duration }} днів</span>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p class="no-tours">Турів поки немає</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

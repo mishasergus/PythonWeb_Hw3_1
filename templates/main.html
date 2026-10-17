@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+    <div class="home-container">
+        <!-- Заголовок -->
+        <header class="home-header">
+            <h1>Ласкаво просимо до нашої туристичної агенції!</h1>
+            <p class="subtitle">Відкрийте для себе світ разом із нами</p>
+        </header>
+
+        <!-- Банер із фото та коротким описом агенції -->
+        <section class="banner-section">
+            <div class="banner-image">
+                <!-- Замініть шлях на ваше актуальне зображення у папці static/images -->
+                <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Подорожі та пригоди">
+            </div>
+            <div class="banner-content">
+                <h2>Про нашу агенцію</h2>
+                <p>
+                    Ми — команда професіоналів, яка допомагає втілювати ваші мрії про ідеальний відпочинок у реальність.
+                    Понад 10 років ми організовуємо незабутні подорожі по всьому світу: від затишних куточків Європи до екзотичних островів.
+                    Довірте нам свій комфорт, безпеку та яскраво емоції!
+                </p>
+                <a href="/tours" class="btn-primary">Переглянути тури</a>
+            </div>
+        </section>
+    </div>
+{% endblock %}

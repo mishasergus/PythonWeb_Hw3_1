@@ -1,0 +1,593 @@
+/* Базові скидання та загальні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Стилі для хедера */
+.site-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #3498db;
+}
+
+/* Основний контент */
+.main-content {
+    flex: 1;
+    padding: 20px 0;
+}
+
+/* Стилі для футера */
+.site-footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Загальні стилі головної сторінки */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Секція банера та опису */
+.banner-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.banner-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.banner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.banner-content h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.banner-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Кнопка */
+.btn-primary {
+    display: inline-block;
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Адаптивність для менших екранів */
+@media (max-width: 768px) {
+    .banner-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+
+/* Стилі сторінки "Про нас" */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h1 {
+    font-size: 2.3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.about-text, .about-image {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Секція переваг */
+.advantages-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.advantages-section h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.advantage-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.advantage-card h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+/* Секція команди */
+.team-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 250px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.team-member .position {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+    }
+}
+
+/* Контейнер сторінки турів */
+.tours-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tours-container h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Форма фільтрації */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    align-items: flex-end;
+}
+
+.filter-form .form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-form label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.filter-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-filter {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    height: 42px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-filter:hover {
+    background-color: #2980b9;
+}
+
+/* Сітка карток турів */
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.tour-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+}
+
+.tour-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tour-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tour-info h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.destination {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.tour-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.price {
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+.duration {
+    color: #27ae60;
+    font-size: 0.95rem;
+}
+
+/* Повідомлення, коли немає турів */
+.no-tours {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+/* Стилі для сторінки "Контакти" */
+.contacts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contacts-container h1 {
+    font-size: 2.3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.contacts-container .subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.contact-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card h3 {
+    color: #3498db;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+/* Додаткові стилі для форми додавання туру */
+.filter-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+/* Якщо потрібно зробити форму додавання туру вертикальною або з ширшими полями */
+.filter-form textarea:focus,
+.filter-form input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Стилі для кнопки бургера (за замовчуванням сховані на ПК) */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    padding: 0;
+    z-index: 1001;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #2c3e50;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .main-nav.open {
+        max-height: 350px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    .burger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .home-header h1,
+    .about-header h1,
+    .tours-container h1,
+    .contacts-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-section {
+        flex-direction: column;
+        padding: 15px;
+    }
+}
